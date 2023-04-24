@@ -1,0 +1,95 @@
+{
+    "[plaintext]": {
+        "editor.wrappingIndent": "none",
+        "editor.autoIndent": "none",
+        "editor.wordWrap": "bounded"
+    },
+    "editor.lineHeight": 1.8,
+    // 是否现实状态栏信息，状态栏会展示码字时间、码字速度，鼠标移到上面会显示一共码了多少字
+    "noveler.statusShow": true,
+    // 状态栏信息的刷新间隔，单位为秒
+    "noveler.statusTimeUnit": 10,
+    // 状态栏字数统计是否包含空格
+    "noveler.statusIncludingSpace": false,
+    // 状态栏显示的项目
+    "noveler.statusItems": [
+        // 速度
+        "Speed",
+        // 码字累计时间
+        "Time",
+        // 已经输入的字数
+        "InputWordCount",
+        // 当前编辑器文本字数
+        "TextWordCount"
+    ],
+    // 是否使用盘古排版（即中英文分隔），设置为true的话会在格式化时在中英文间自动插入空格，同时移除多余的空格
+    "noveler.usePangu": true,
+    // 回车后是否自动插入缩进、空行
+    "noveler.autoIndent": true,
+    // 回车后自动插入的空行数
+    "noveler.autoIndentLines": 0,
+    // 回车后自动插入的缩进空格
+    "noveler.autoIndentSpaces": 4,
+    // 用户自定义高亮，按照正则表达式匹配
+    // 键为正则表达式，值为高亮配置，结构为 DecorationRenderOptions
+    "noveler.customHighlight": {
+        "“.*”": {
+            "color": "#d69d85"
+        }
+    },
+    // 小说元信息（例如角色的设定、宗门的设定）文件设置
+    // 文件请使用csv格式，从第一行开始，不要有注释
+    "noveler.confCSVFiles": [
+        {
+            // 文件路径（相对路径只在打开单文件夹时才会读取）
+            "path": "editor-config/人物.csv",
+            // 要高亮的列名，默认为名称
+            "key": "名称",
+            // 悬挂提示的列名，不写则无悬挂信息，无默认值
+            "hoverKey": "信息",
+            // 高亮配置，结构为DecorationRenderOptions
+            "decorationRenderOptions": {
+                "color": "#4ec9b0"
+            },
+            "suggestKind": "Class"
+        },
+        {
+            // 文件路径（相对路径只在打开单文件夹时才会读取）
+            "path": "editor-config/物品.csv",
+            // 要高亮的列名，默认为名称
+            "key": "名称",
+            // 悬挂提示的列名，不写则无悬挂信息，无默认值
+            "hoverKey": "信息",
+            // 高亮配置，结构为DecorationRenderOptions
+            "decorationRenderOptions": {
+                "color": "#9cdcfe"
+            },
+            "suggestKind": "Enum"
+        },
+        {
+            // 文件路径（相对路径只在打开单文件夹时才会读取）
+            "path": "editor-config/地点.csv",
+            // 要高亮的列名，默认为名称
+            "key": "名称",
+            // 悬挂提示的列名，不写则无悬挂信息，无默认值
+            "hoverKey": "信息",
+            // 高亮配置，结构为DecorationRenderOptions
+            "decorationRenderOptions": {
+                "color": "#b8d7a3"
+            },
+            "suggestKind": "Variable"
+        }
+    ],
+    // 补全时的触发字符, *注*：请尽量使用英文标点作为触发字符, 默认为@
+    "noveler.completionChar": "@",
+    "noveler.confTXTFiles": [
+        {
+            // 文件路径（相对路径只在打开单文件夹时才会读取）
+            "path": "editor-config/敏感词.txt",
+            // 报错信息，默认为敏感词
+            "message": "敏感词",
+            // 报错等级，默认为 Error，可选值请查看 `DiagnosticSeverity`
+            "diagnosticSeverity": "Error"
+        }
+    ]
+}
